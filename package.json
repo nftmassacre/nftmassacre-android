@@ -1,0 +1,15 @@
+{
+  "name": "nftmassacre-android",
+  "version": "0.1.2",
+  "private": true,
+  "description": "Build tooling for the self-contained NFT Massacre Android web bundle.",
+  "scripts": {
+    "bundle:web": "esbuild app/src/main/assets/www/app.js --bundle --format=esm --outfile=app/src/main/assets/www/app.bundle.js --target=es2020"
+  },
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "devDependencies": {
+    "esbuild": "^0.25.10",
+    "three": "^0.183.2"
+  }
+}

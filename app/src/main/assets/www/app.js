@@ -269,9 +269,9 @@ const playCelebrationSound = () => {
         hiddenUpdateBuckets: 7
     });
     const clampDPR = (dpr) => Math.min(dpr, MOBILE_PERFORMANCE_MODE ? MOBILE_PERF.maxDpr : 2);
-    const DEFAULT_HOME_URL = 'https://agent1c-ai.github.io';
+    const DEFAULT_HOME_URL = 'https://appassets.androidplatform.net/assets/www/browser-home.html';
     const PLAYER_MODEL_URL = './assets/base-female.glb';
-    const DEFAULT_NPC_MODEL_URL = 'https://threejs.org/examples/models/gltf/Xbot.glb';
+    const DEFAULT_NPC_MODEL_URL = './assets/models/Xbot.glb';
     const TAU = Math.PI * 2;
 
     const canvas = document.getElementById('webgl');
@@ -964,19 +964,19 @@ const playCelebrationSound = () => {
         },
 
         grass(rx = 8, ry = 8) {
-            return this.get('https://threejs.org/examples/textures/terrain/grasslight-big.jpg', rx, ry);
+            return this.get('./assets/textures/grasslight-big.jpg', rx, ry);
         },
 
         wood(rx = 2, ry = 2) {
-            return this.get('https://threejs.org/examples/textures/hardwood2_diffuse.jpg', rx, ry);
+            return this.get('./assets/textures/hardwood2_diffuse.jpg', rx, ry);
         },
 
         brick(rx = 2, ry = 2) {
-            return this.get('https://threejs.org/examples/textures/brick_diffuse.jpg', rx, ry);
+            return this.get('./assets/textures/brick_diffuse.jpg', rx, ry);
         },
 
         tile(rx = 2, ry = 2) {
-            return this.get('https://threejs.org/examples/textures/floors/FloorsCheckerboard_S_Diffuse.jpg', rx, ry);
+            return this.get('./assets/textures/FloorsCheckerboard_S_Diffuse.jpg', rx, ry);
         }
     };
 
@@ -990,7 +990,7 @@ const playCelebrationSound = () => {
         },
 
         addKeyboard(root) {
-            const tex = this.texture('https://raw.githubusercontent.com/Decentricity/decentricity.github.io/ffb4e1af2e5d3eb5f2c0aee13f3fdd6c182c98f2/ibmkeyboard.jpg');
+            const tex = this.texture('./assets/props/ibmkeyboard.jpg');
             const keyboard = new THREE.Mesh(
                 new THREE.BoxGeometry(0.48, 0.018, 0.18),
                 new THREE.MeshStandardMaterial({ map: tex, roughness: 0.8, metalness: 0.1 })
@@ -1022,7 +1022,7 @@ const playCelebrationSound = () => {
         },
 
         addDeskPhoto(root) {
-            const tex = this.texture('https://raw.githubusercontent.com/Decentricity/decentricity.github.io/ad98f557d0c7df179f3bd1f126effed57d8b061c/dannyfren.jpg');
+            const tex = this.texture('./assets/props/dannyfren.jpg');
             const photo = new THREE.Mesh(
                 new THREE.PlaneGeometry(0.15, 0.2),
                 new THREE.MeshStandardMaterial({
@@ -1041,7 +1041,7 @@ const playCelebrationSound = () => {
         },
 
         addDeskPaper(root) {
-            const tex = this.texture('https://raw.githubusercontent.com/Decentricity/decentricity.github.io/083da9e2e5f78e6585f202ec9da8eaac498535e0/paperinstructions1.jpg');
+            const tex = this.texture('./assets/props/paperinstructions1.jpg');
             const paper = new THREE.Mesh(
                 new THREE.BoxGeometry(0.135, 0.0012, 0.1),
                 new THREE.MeshStandardMaterial({ map: tex, roughness: 0.95, metalness: 0.0 })
@@ -1199,7 +1199,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/2bf5a9f856ff9b3a06d99d92b03e3abc19605914/floppy.jpg',
+                './assets/props/floppy.jpg',
                 -0.35,
                 0.052,
                 0.25,
@@ -1208,7 +1208,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy_chordynaut',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/3f45e75880f0bc5237006ba0eaaed61ad1e8b219/chordynautfloppy.jpg',
+                './assets/props/chordynautfloppy.jpg',
                 -0.07,
                 0.052,
                 0.18,
@@ -1218,7 +1218,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy_tetris',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/f9f57cd5b8e9e6d2b2bce059cb3139878a06f184/3dtetrisfloppy.jpg',
+                './assets/props/3dtetrisfloppy.jpg',
                 0.16,
                 0.052,
                 0.28,
@@ -1228,7 +1228,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy_gamegen',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/f59193928c06cc13f2a20d3fa81ec9dbe692966d/gamegenfloppy.jpg',
+                './assets/props/gamegenfloppy.jpg',
                 -0.01,
                 0.052,
                 0.02,
@@ -1238,7 +1238,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy_decentricity',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/348e56fa40796b9940c585c3a8acba09fca7a869/decentricityfloppy.jpg',
+                './assets/props/decentricityfloppy.jpg',
                 0.34,
                 0.052,
                 0.03,
@@ -1248,7 +1248,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy_crtception',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/f5f23e27dfb568917caf2df25955d9a5f7e13c02/crtception.jpg',
+                './assets/props/crtception.jpg',
                 0.33,
                 0.052,
                 -0.12,
@@ -1258,7 +1258,7 @@ const playCelebrationSound = () => {
             this.addDeskFloppy(
                 root,
                 'floppy_pythoncity',
-                'https://raw.githubusercontent.com/Decentricity/decentricity.github.io/e17a204e6b76deb4aee9f299c1a9d25abaf0cd61/pythoncityfloppy.jpg',
+                './assets/props/pythoncityfloppy.jpg',
                 0.12,
                 0.052,
                 -0.15,

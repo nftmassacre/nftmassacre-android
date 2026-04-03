@@ -4,7 +4,7 @@ const ALCHEMY_NFT_URL = "https://eth-mainnet.g.alchemy.com/nft/v2/demo/getNFTsFo
 const ALCHEMY_NFT_PAGE_SIZE = 50;
 const ETHERSCAN_ADDRESS_URL = "https://etherscan.io/address/";
 const ETHERSCAN_TOKEN_URL = "https://etherscan.io/token/";
-const TRUSTWALLET_ETH_LOGO = "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png";
+const TRUSTWALLET_ETH_LOGO = "";
 
 const walletForm = document.getElementById("walletForm");
 const addressInput = document.getElementById("addressInput");
@@ -78,12 +78,7 @@ function createSummaryItem(label, value) {
 }
 
 function getTokenLogoUrl(address) {
-  try {
-    const checksum = ethers.getAddress(address);
-    return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${checksum}/logo.png`;
-  } catch {
-    return "";
-  }
+  return "";
 }
 
 function fallbackLogo(symbol) {

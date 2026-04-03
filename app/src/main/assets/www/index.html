@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="url-overlay">
-        <input type="text" id="url-input" placeholder="Enter URL to browse..." value="https://agent1c-ai.github.io">
+        <input type="text" id="url-input" placeholder="Enter URL to browse..." value="https://appassets.androidplatform.net/assets/www/browser-home.html">
     </div>
 
     <canvas id="webgl"></canvas>
@@ -31,6 +31,7 @@
         <div id="target-label">Current target: <span id="current-target-name">None</span><img id="current-target-preview" src="" alt="target preview"></div>
     </div>
     <div id="toast-container"></div>
+    <div id="startup-error" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:99999;padding:12px 14px;border:1px solid #ff7f9f;border-radius:10px;background:rgba(30,8,15,0.94);color:#ffe6ee;font:14px/1.4 monospace;white-space:pre-wrap;"></div>
     <div id="mobile-controls" aria-hidden="true">
         <div id="mobile-move-zone" class="mobile-pad">
             <div class="mobile-pad-label">MOVE</div>
@@ -59,15 +60,26 @@
     </div>
     <input type="file" id="world-object-input" accept=".glb,.gltf,.obj,.fbx,.stl,.ply,.vox" hidden>
 
-    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js",
-                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/"
+    <script src="./vendor/ethers/ethers.umd.min.js"></script>
+    <script>
+        (function () {
+            function showFatal(message) {
+                var node = document.getElementById('startup-error');
+                if (!node) return;
+                node.textContent = message;
+                node.style.display = 'block';
             }
-        }
+            window.addEventListener('error', function (event) {
+                if (!event || !event.message) return;
+                showFatal('Startup error: ' + event.message);
+            });
+            window.addEventListener('unhandledrejection', function (event) {
+                var reason = event && event.reason;
+                var message = reason && reason.message ? reason.message : String(reason);
+                showFatal('Startup rejection: ' + message);
+            });
+        }());
     </script>
-    <script type="module" src="app.js?v=20260326mobileprod1"></script>
+    <script type="module" src="app.bundle.js?v=20260403local1"></script>
 </body>
 </html>

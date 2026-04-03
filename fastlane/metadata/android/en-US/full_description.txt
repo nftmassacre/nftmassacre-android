@@ -9,4 +9,5 @@
 <li>ambient crowd audio, speech bubbles, and target highlighting</li>
 </ul>
 <p>The app is not a wallet. It does not ask for private keys or perform transaction signing.</p>
-<p>The current canonical build mirrors the working upstream web app bundle. It still uses fixed remote services and remote web assets at runtime, the same way the live site does.</p>
+<p>The Android build now ships its boot-critical web runtime locally inside the APK, including the main game bundle, JavaScript dependencies, scene textures, the default avatar model, and the fixed prop art.</p>
+<p>It still uses live remote services for wallet and NFT data, and the in-world browser can still navigate to external websites.</p>

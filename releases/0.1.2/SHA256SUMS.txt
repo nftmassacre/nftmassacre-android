@@ -1,0 +1,2 @@
+ee235d1e70de45ceacc9c685ceb81b22997a6056bdb4faf51ea9b4ed9a27a1d4  nftmassacre-v0.1.2-debug.apk
+10dc9af386bf71adfb139727a39b58dddd6c3c103745c3a24a175c9d0460086b  nftmassacre-v0.1.2-release-unsigned.apk
