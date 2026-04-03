@@ -2,6 +2,10 @@
 
 Native Android wrapper for the `nftmassacre.github.io` site.
 
+## Download
+
+- Latest debug APK: `https://raw.githubusercontent.com/nftmassacre/nftmassacre-android/main/releases/0.1.0/nftmassacre-v0.1.0-debug.apk`
+
 ## Contents
 
 - `app/`: Android app source
