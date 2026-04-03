@@ -1,58 +1,25 @@
 # NFT Massacre Android
 
-Native Android wrapper for the `nftmassacre.github.io` site.
+Native Android wrapper for the NFT Massacre web game.
+
+## What It Is
+
+NFT Massacre is a small third-person 3D game set on a ringworld street. You control a pink CRT-headed avatar, load an Ethereum wallet address, and spawn that wallet's NFTs into the scene as wandering NPCs. The core loop is simple: move around the neighborhood, load a wallet, find the spawned NFT NPCs, and punch them into panic or knock them down.
+
+This Android app packages the current `nftmassacre.github.io` site into a WebView wrapper via Android's `WebViewAssetLoader`. The web app itself still uses remote network services and remote web assets exactly as the live site does.
+
+## Runtime Features
+
+- Fullscreen native Android wrapper around the live NFT Massacre web app bundle
+- Wallet-driven NFT NPC spawning from a user-supplied Ethereum address
+- Touch controls for Android play
+- In-world browser screen and URL entry
+- File chooser bridge for the hidden world-object import input
+- Download handoff through Android's download manager or browser fallback
 
 ## Download
 
-- Latest debug APK: `https://raw.githubusercontent.com/nftmassacre/nftmassacre-android/main/releases/0.1.0/nftmassacre-v0.1.0-debug.apk`
-
-## What The Game Is
-
-NFT Massacre is a small third-person 3D game set on a ringworld street. You control a pink CRT-headed avatar, load an Ethereum wallet, and spawn that wallet's NFTs into the scene as wandering NPCs. The core loop is simple: move around the neighborhood, load a wallet, find the spawned NFT NPCs, and punch them into panic or knock them down.
-
-The scene also includes a built-in web screen, ambient crowd audio, speech bubbles, target highlighting, and a small info overlay. NFT data is loaded through the bundled wallet loader and used to place wallet-specific NPCs into the world.
-
-## How To Use It
-
-1. Launch the app and wait for the loading overlay to clear.
-2. Enter an Ethereum address in the wallet field and press `Load NFTs`.
-3. Move around the world and approach the spawned NFT NPCs.
-4. Attack while facing them to panic or knock them down.
-5. Use the info button for the About dialog.
-
-## Controls
-
-### Desktop-style controls
-
-- Click the world to lock input and enter movement mode.
-- Move the mouse to look around.
-- Use `WASD` or the arrow keys to move.
-- Hold `Shift` to run.
-- Press `Space` to jump.
-- Press `C` to crouch-toggle.
-- Left click while locked to punch/attack.
-- Press `ESC` to release the cursor or leave the in-world screen.
-
-### Touch controls
-
-- Use the left on-screen pad to move.
-- Drag on the world view to look around.
-- Pinch to zoom the camera.
-- Tap outside the in-world screen to leave screen mode.
-
-## In-Game Interactions
-
-- Loading a wallet spawns that wallet's NFTs as NPCs in the neighborhood.
-- The HUD shows wallet load status and the current target.
-- A nearby attack can stagger NFT NPCs, trigger panic, or knock characters down.
-- The CRT screen in the world can browse web content.
-- The keyboard object opens the URL entry bar for the in-world screen.
-
-## Contents
-
-- `app/`: Android app source
-- `app/src/main/assets/www/`: bundled web app
-- `releases/`: built release artifacts currently tracked for this app
+- Current debug APK: `https://raw.githubusercontent.com/nftmassacre/nftmassacre-android/main/releases/0.1.1/nftmassacre-v0.1.1-debug.apk`
 
 ## Build
 
@@ -60,11 +27,22 @@ Standard Android Gradle project:
 
 ```sh
 ./gradlew assembleDebug
-./gradlew bundleRelease
+./gradlew assembleRelease
 ```
 
 On the Android/Termux Debian build host, use the local `aapt2` override if needed:
 
 ```sh
 ./gradlew assembleDebug -Pandroid.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2
+./gradlew assembleRelease -Pandroid.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2
 ```
+
+## Release Notes
+
+- Current version: `0.1.1`
+- Source license: `AGPL-3.0-or-later`
+- Canonical Android bundle currently mirrors the working upstream web app again after a failed attempt to localize all runtime assets.
+
+## F-Droid Status
+
+This canonical working build is not ready for the main F-Droid repository yet. The packaged web app still loads executable JavaScript and other assets from remote hosts at runtime, which conflicts with F-Droid main-repo policy. The correct path is to vendor those runtime dependencies cleanly without breaking the web app, then submit.

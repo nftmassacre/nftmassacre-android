@@ -1,0 +1,1 @@
+Bundled JS dependencies locally and prepared the Android wrapper for F-Droid submission.

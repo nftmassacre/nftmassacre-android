@@ -1,0 +1,12 @@
+<p>NFT Massacre is a small third-person 3D game for Android.</p>
+<p>You load a public Ethereum wallet address, spawn that wallet's NFTs into the neighborhood as NPCs, and then explore the scene, chase them down, and punch them into panic.</p>
+<p>Features include:</p>
+<ul>
+<li>an Android WebView wrapper around the current NFT Massacre web app</li>
+<li>touch-friendly movement and camera controls</li>
+<li>a built-in browser screen inside the game world</li>
+<li>wallet-driven NFT spawning from a user-supplied Ethereum address</li>
+<li>ambient crowd audio, speech bubbles, and target highlighting</li>
+</ul>
+<p>The app is not a wallet. It does not ask for private keys or perform transaction signing.</p>
+<p>The current canonical build mirrors the working upstream web app bundle. It still uses fixed remote services and remote web assets at runtime, the same way the live site does.</p>
